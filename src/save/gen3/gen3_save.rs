@@ -1,5 +1,6 @@
 use std::fmt::{Display, Formatter};
 
+#[derive(Debug)]
 pub enum Gen3Game {
     RubySapphire,
     FireRedLeafGreen,
@@ -16,11 +17,13 @@ impl Display for Gen3Game {
     }
 }
 
+#[derive(Debug)]
 pub struct KeyCode {
     pub game_code: Option<u32>,
     pub security_key: Option<u32>,
 }
 
+#[derive(Debug)]
 pub struct PlayedTime {
     pub time: [u8; 5],
     pub hours: u16,
@@ -29,12 +32,14 @@ pub struct PlayedTime {
     pub frames: u8,
 }
 
+#[derive(Debug)]
 pub struct TrainerId {
     pub trainer_id: u32,
     pub secret_id: u16,
     pub public_id: u16
 }
 
+#[derive(Debug)]
 pub struct TrainerData {
     pub section_info: Option<SectionData>,
     pub name: [u8; 7],
@@ -44,6 +49,7 @@ pub struct TrainerData {
     pub security: KeyCode,
 }
 
+#[derive(Debug)]
 pub struct SectionData {
     pub section_id: u16,
     pub checksum: u16,
@@ -57,6 +63,7 @@ impl Display for SectionData {
     }
 }
 
+#[derive(Debug)]
 pub struct SaveGen3 {
     pub game_ver: Gen3Game,
     pub trainer_section: Option<TrainerData>,

@@ -1,9 +1,7 @@
 use std::array::TryFromSliceError;
 
-use crate::utils::{little_endian_u8_to_u16, little_endian_u8_to_u32, SliceUtils};
-
-use crate::{Gen3Game, SaveGen3};
-use crate::save::gen3::gen3_save::*;
+use crate::utils::{little_endian_u8_to_u32, little_endian_u8_to_u16, SliceUtils};
+use super::gen3_save::{Gen3Game, KeyCode, SaveGen3, SectionData, TrainerData, TrainerId, PlayedTime};
 
 pub fn get_security_key_or_game_code(bytes_a: &[u8], bytes_b: &[u8], save: &mut SaveGen3) -> Result<KeyCode, TryFromSliceError> {
     let block_a = little_endian_u8_to_u32(bytes_a)?;

@@ -3,4 +3,9 @@ name = "pkhex_rs"
 version = "0.0.1"
 edition = "2021"
 
+[lib]
+name = "pkhex_rs"
+path = "src/lib.rs"
+crate-type = ["lib", "cdylib"]
+
 [dependencies]
