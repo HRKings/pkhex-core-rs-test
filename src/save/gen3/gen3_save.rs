@@ -1,4 +1,4 @@
-use std::fmt::{Display, Formatter};
+use std::fmt::{Display, Formatter, Result};
 
 #[derive(Debug)]
 pub enum Gen3Game {
@@ -8,7 +8,7 @@ pub enum Gen3Game {
 }
 
 impl Display for Gen3Game {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         match self {
             Gen3Game::RubySapphire => write!(f, "Ruby/Sapphire"),
             Gen3Game::FireRedLeafGreen => write!(f, "FireRed/LeafGreen"),
@@ -58,7 +58,7 @@ pub struct SectionData {
 }
 
 impl Display for SectionData {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         write!(f, "ID: {}, Checksum: {}, Signature: {}, Save Index: {}", self.section_id, self.checksum, self.signature, self.save_index)
     }
 }
