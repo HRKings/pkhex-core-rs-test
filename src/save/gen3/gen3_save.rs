@@ -1,5 +1,7 @@
 use std::fmt::{Display, Formatter, Result};
 
+use crate::byte_struct_test;
+
 #[derive(Debug)]
 pub enum Gen3Game {
     RubySapphire,
@@ -36,7 +38,7 @@ pub struct PlayedTime {
 pub struct TrainerId {
     pub trainer_id: u32,
     pub secret_id: u16,
-    pub public_id: u16
+    pub public_id: u16,
 }
 
 #[derive(Debug)]
@@ -49,17 +51,17 @@ pub struct TrainerData {
     pub security: KeyCode,
 }
 
-#[derive(Debug)]
-pub struct SectionData {
-    pub section_id: u16,
-    pub checksum: u16,
-    pub signature: u32,
-    pub save_index: u32,
+byte_struct_test! {
+    SectionData => section_id: u16@0x0FF4|le, checksum: u16@0x0FF6|le, signature: u32@0x0FF8|le, save_index: u32@0x0FFC|le
 }
 
 impl Display for SectionData {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        write!(f, "ID: {}, Checksum: {}, Signature: {}, Save Index: {}", self.section_id, self.checksum, self.signature, self.save_index)
+        write!(
+            f,
+            "ID: {}, Checksum: {}, Signature: {}, Save Index: {}",
+            self.section_id, self.checksum, self.signature, self.save_index
+        )
     }
 }
 

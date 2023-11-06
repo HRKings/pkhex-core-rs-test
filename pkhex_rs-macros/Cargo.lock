@@ -3,27 +3,6 @@
 version = 3
 
 [[package]]
-name = "bytemuck"
-version = "1.13.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17febce684fd15d89027105661fec94afb475cb995fbc59d2865198446ba2eea"
-
-[[package]]
-name = "paste"
-version = "1.0.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c"
-
-[[package]]
-name = "pkhex_rs"
-version = "0.0.1"
-dependencies = [
- "bytemuck",
- "paste",
- "pkhex_rs_macros",
-]
-
-[[package]]
 name = "pkhex_rs_macros"
 version = "0.0.1"
 dependencies = [
