@@ -1,4 +1,4 @@
-use pkhex_rs::{utils::{SliceUtils}, save::gen3::{gen3_save::{SaveGen3, Gen3Game}, gen3_utils::parse_trainer_data_from_byte_array}};
+use pkhex_rs::{utils::SliceUtils, save::gen3::{gen3_save::{SaveGen3, Gen3Game}, gen3_utils::parse_trainer_data_from_byte_array}};
 
 fn main() {
 
